@@ -54,3 +54,31 @@ CREATE TABLE public."Perros"
 
 ALTER TABLE IF EXISTS public."Perros"
     OWNER to postgres;	
+	
+--Nuevas tablas creadas para el Taller1 del modulo 3	
+CREATE TABLE public."Roles"
+(
+    "ID" integer,
+    Nombre character varying(50) NOT NULL,
+    PRIMARY KEY ("ID")
+);
+
+ALTER TABLE IF EXISTS public."Roles"
+    OWNER to postgres;	
+	
+CREATE TABLE public."Usuarios"
+(
+    "ID" integer,
+    username character varying(50) NOT NULL,
+    password character varying(50) NOT NULL,
+    "ID_Rol" integer NOT NULL,
+    PRIMARY KEY ("ID"),
+    CONSTRAINT "FK_Usuarios_Roles" FOREIGN KEY ("ID_Rol")
+        REFERENCES public."Roles" ("ID") MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+        NOT VALID
+);
+
+ALTER TABLE IF EXISTS public."Usuarios"
+    OWNER to postgres;	
