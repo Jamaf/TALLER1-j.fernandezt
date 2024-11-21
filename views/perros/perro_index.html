@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Perros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Gestión de Perros</h2>
+            <a href="{{ url_for('perro_bp.listar')}}" class="btn">Listar todos los perros</a>
+            <a href="{{ url_for('perro_bp.agregar_perro_form')}}" class="btn">Crear perro</a>
+            <a onclick="consultarPorNombre()" class="btn">Consultar por nombre</a>
+            <a href="{{ url_for('perro_bp.actualizar_cuidador_mario')}}" class="btn">Los perros de Mario</a>
+            <a href="{{ url_for('index')}}" class="btn">Regresar</a>            
+        </div>
+    </div>
+    <script>    
+        function consultarPorNombre() {
+            const nombre = prompt("Ingrese el nombre del perro para consultar:");
+            if (nombre) {
+                window.location.href = `buscar/${nombre}`;
+            }
+        }
+    </script>
+        
+</body>
+</html>

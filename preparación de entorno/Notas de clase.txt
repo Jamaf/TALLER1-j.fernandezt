@@ -1,0 +1,16 @@
+pAquetes instalados
+pip install flask
+pip install flask-sqlalchemy
+pip install python-dotenv #para manejar las variables ocultas
+pip install psycopg2 # para conexion con postgresql
+pip install psycopg3 #proyecto final
+
+
+pip freeze > requirements.txt
+
+user_python_app
+8NoZ858}}sJu
+
+j.fernandezt@uniandes.edu.co
+
+git config --list --global

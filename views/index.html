@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Perros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Guardería la Favorita</h2>
+            <a href="{{ url_for('perro_bp.index')}}" class="btn">Gestion de los perros</a>
+            <a href="{{ url_for('cuidador_bp.listar_json')}}" class="btn">Visualizar cuidadores</a>
+        </div>
+    </div>
+</body>
+</html>

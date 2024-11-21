@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    color: #007BFF;
+}
+
+.btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.btn_table {
+    display: block;
+    margin: 0px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn_table:hover, .btn:hover {
+    background-color: #0056b3;
+}
+
+.form-inline {
+    margin: 10px 0;
+}
+
+form input, form button {
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+th {
+    color: #fff;
+    background-color: #007BFF;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.input_readonly {
+    background-color: #ddd;
+ }

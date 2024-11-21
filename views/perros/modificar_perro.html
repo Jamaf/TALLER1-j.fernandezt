@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar perro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Modidicar perros</h2>
+
+            <form action="{{ url_for('perro_bp.modificar_perro') }}" method="post">
+                <h3>Perro a modificar {{perro.Nombre}}</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="number" name="id_perro" value="{{perro.ID}}" readonly="readonly" required class="input_readonly">
+                        </td>
+                    </tr>                         
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre" value="{{perro.Nombre}}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="raza" value="{{perro.Raza}}" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="edad" value="{{perro.Edad}}" placeholder="Edad" required>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <input type="number" step="0.1" name="peso" value="{{perro.Peso}}" placeholder="Peso (kg)" required>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                            <!-- <input type="number" name="id_cuidador" value="{{perro.ID_Cuidador}}"  required> -->
+                            <label for="cuidador">Cuidador:</label>
+                            {% for cuidador in cuidadores %}
+                                <input type="radio" name="id_cuidador" id="{{cuidador.ID}}" value="{{cuidador.ID}}" 
+                                    {% if cuidador.ID == perro.ID_Cuidador %} 
+                                        checked 
+                                    {% endif %}> {{cuidador.Nombre}} </input>
+                            {% endfor %}                             
+                        </td>
+                    </tr>                                            
+                    <tr>
+                        <td>
+                            <button type="submit">Modificar Perro</button>
+                        </td>
+                    </tr>                        
+                </table>
+            </form>        
+
+            <a href="{{ url_for('perro_bp.index')}}" class="btn">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>

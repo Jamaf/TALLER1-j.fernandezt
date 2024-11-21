@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar perro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Agregar Perros</h2>
+
+            <form action="{{ url_for('perro_bp.agregar_perro') }}" method="post">
+                <h3>Agregar Nuevo Perro</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="number" name="id_perro" placeholder="Id" required>
+                        </td>
+                    </tr>                         
+                    <tr>
+                        <td>
+                            <input type="text" name="nombre" placeholder="Nombre" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="raza" placeholder="Raza" placeholder="Raza" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="edad" placeholder="Edad" required>
+                        </td>
+                    </tr>                    
+                    <tr>
+                        <td>
+                            <input type="number" step="0.1" name="peso" placeholder="Peso (kg)" required>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <td>
+                            <!-- <input type="number" name="id_cuidador" placeholder="Id Cuidador" required> -->
+                            <!-- <input type="radio" name="id_cuidador" id="option1" value="1"> {{cuidadores[0].Telefono}} </input>
+                            <input type="radio" name="id_cuidador" id="option2" value="2"> Daenerys </input> -->
+                            <label for="cuidador">Cuidador:</label>
+                            {% for cuidador in cuidadores %}
+                                <input type="radio" name="id_cuidador" id="{{cuidador.ID}}" value="{{cuidador.ID}}"> {{cuidador.Nombre}} </input>
+                            {% endfor %}
+                        </td>
+                    </tr>                                            
+                    <tr>
+                        <td>
+                            <button type="submit">Agregar Perro</button>
+                        </td>
+                    </tr>                        
+                </table>
+            </form>        
+
+            <a href="{{ url_for('perro_bp.index')}}" class="btn">Regresar</a>
+        </div>
+    </div>
+</body>
+</html>
