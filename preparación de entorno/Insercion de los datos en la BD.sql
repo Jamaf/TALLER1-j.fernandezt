@@ -17,3 +17,12 @@ INSERT INTO public."Perros"("ID", "Nombre", "Raza", "Edad", "Peso", "ID_Guarderi
 INSERT INTO public."Perros"("ID", "Nombre", "Raza", "Edad", "Peso", "ID_Guarderia", "ID_Cuidador")VALUES (12,'Nymeria','Direwolf',NULL,NULL,1,1);
 INSERT INTO public."Perros"("ID", "Nombre", "Raza", "Edad", "Peso", "ID_Guarderia", "ID_Cuidador")VALUES (13,'Lady','Direwolf',NULL,NULL,1,1);
 INSERT INTO public."Perros"("ID", "Nombre", "Raza", "Edad", "Peso", "ID_Guarderia", "ID_Cuidador")VALUES (14,'Grey Wind','Direwolf',NULL,NULL,1,1);
+
+INSERT INTO public."Roles"("ID", "Nombre") VALUES (1,'Cliente');
+INSERT INTO public."Roles"("ID", "Nombre") VALUES (2,'Administrador');
+INSERT INTO public."Roles"("ID", "Nombre") VALUES (3,'Empleado');
+INSERT INTO public."Roles"("ID", "Nombre") VALUES (4,'Cualquiera');
+
+INSERT INTO public."Usuarios"("ID", username, password, "ID_Rol") VALUES (1, 'pperez', '12345', 1);
+INSERT INTO public."Usuarios"("ID", username, password, "ID_Rol") VALUES (2, 'cocho', '12345', 1);
+INSERT INTO public."Usuarios"("ID", username, password, "ID_Rol") VALUES (3, 'jfernandez', '12345', 2);

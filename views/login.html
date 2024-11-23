@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"    
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>Login</h2>
+
+            <form action="/" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <input name="username" type="text" placeholder="username" required>
+                        </td>
+                    </tr>                         
+                    <tr>
+                        <td>
+                            <input name="password" type="password" placeholder="password" required>
+                        </td>
+                    </tr>
+                                           
+                    <tr>
+                        <td>
+                            <button type="submit">Enviar</button>
+                        </td>
+                    </tr>                        
+                </table>
+            </form>        
+
+        </div>
+    </div>    
+</body>
+</html>
